@@ -10,7 +10,7 @@ class UsuarioController extends Controller
     public function index(Request $request){
         $params = $request->all();
         $size = isset($params['size']) ? $params['size'] : 5;
-        $usuario = Usuario::with('horario')->where('nombre',$params['nombre'])->get();
+        $usuario = Usuario::with('horario')->get();
         return $usuario;
     }
 

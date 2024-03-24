@@ -10,7 +10,7 @@ class AulaController extends Controller
     public function index(Request $request){
         $params = $request->all();
         $size = isset($params['size']) ? $params['size'] : 5;
-        $aula = Aula::with('horario')->where('nombre',$params['nombre'])->get();
+        $aula = Aula::with('horario')->get();
         return $aula;
     }
 

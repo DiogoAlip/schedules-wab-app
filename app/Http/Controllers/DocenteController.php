@@ -10,7 +10,7 @@ class DocenteController extends Controller
     public function index(Request $request){
         $params = $request->all();
         $size = isset($params['size']) ? $params['size'] : 5;
-        $docente = Docente::with('horario')->where('nombre',$params['nombre'])->get();
+        $docente = Docente::with('horario')->get();
         return $docente;
     }
 

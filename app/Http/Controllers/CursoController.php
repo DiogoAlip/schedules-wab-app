@@ -10,7 +10,7 @@ class CursoController extends Controller
     public function index(Request $request){
         $params = $request->all();
         $size = isset($params['size']) ? $params['size'] : 5;
-        $curso = Curso::with('horario')->where('nombre',$params['nombre'])->get();
+        $curso = Curso::with('horario')->get();
         return $curso;
     }
 
