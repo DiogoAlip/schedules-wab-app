@@ -1,37 +1,37 @@
-version: '3.8'
- 
+version: "3.8"
+
 services:
-  laravel:
-    container_name: laravel
-    image: webdevops/php-nginx:8.1
-    restart: on-failure
-    working_dir: /app
-    environment:
-      - WEB_DOCUMENT_ROOT=/app/public
-      - TZ=America/Lima
-      - PHP_DATE_TIMEZONE=America/Lima
-    logging:
-      driver: local
-      options:
-        max-size: 100m
-    ports:
-      - '80:80'
-    volumes:
-      - ./apps/bm/src:/app:delegated
- 
-  mysql:
-    image: mysql:8.0.36
-    container_name: mysql
-    working_dir: /app
-    restart: on-failure
-    logging:
-      driver: local
-      options:
-        max-size: 100m
-    security_opt:
-      - no-new-privileges:true
-    ports:
-      - '3306:3306'
-    environment:
-      MYSQL_ROOT_USER: root
-      MYSQL_ROOT_PASSWORD: awdFTHjil
+    laravel:
+        container_name: laravel
+        image: webdevops/php-nginx:8.1
+        restart: on-failure
+        working_dir: /app
+        environment:
+            - WEB_DOCUMENT_ROOT=/app/public
+            - TZ=America/Lima
+            - PHP_DATE_TIMEZONE=America/Lima
+        logging:
+            driver: local
+            options:
+                max-size: 100m
+        ports:
+            - "81:81"
+        volumes:
+            - ./apps/bm/src:/app:delegated
+
+    mysql:
+        image: mysql:8.0.36
+        container_name: mysql
+        working_dir: /app
+        restart: on-failure
+        logging:
+            driver: local
+            options:
+                max-size: 100m
+        security_opt:
+            - no-new-privileges:true
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_USER: root
+            MYSQL_ROOT_PASSWORD: awdFTHjil
