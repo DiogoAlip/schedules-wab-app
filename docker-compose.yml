@@ -31,7 +31,7 @@ services:
         security_opt:
             - no-new-privileges:true
         ports:
-            - "3306:3306"
+            - "3308:3308"
         environment:
             MYSQL_ROOT_USER: root
             MYSQL_ROOT_PASSWORD: awdFTHjil
